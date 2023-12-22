@@ -17,6 +17,7 @@ pipeline{
         stage('Git Checkout'){
                     when { expression {  params.action == 'create' } }
             steps{
+            cleanWs()
             gitCheckout(
                 branch: "main",
                 url: "https://github.com/venkat1984devops/devops_java_app.git"
